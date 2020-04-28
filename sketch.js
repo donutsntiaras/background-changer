@@ -1,26 +1,21 @@
+var r = 0;
+var g = 0;
+var b = 255;
+
 function setup() {
-  createCanvas(900,400);
+  createCanvas(600,400);
   
-  a = createSprite(200,200,30,30);
-  a.shapeColor="yellow";
-    
 }
 
 function draw() {
-  background("white");
-  
- a.x = World.mouseX;
-   
-  if(a.x > 0 && a.x < 300){
-    background(75,0,130);
-  }
-  else if(a.x > 300 && a.x < 600){
-    background(72,61,139);
-  }
-  else if(a.x > 600 && a.x < 900){
-    background(138,43,226);
-  }
+  //background
+  r = map(mouseX,0,600,0,255);
+  g = map(mouseX,0,600,255,0);
+  b = map(mouseX,0,600,255,0);
+  background(r,g,b);
 
+  //ellipse
+  ellipse(mouseX,200,40);
   
   drawSprites();
 }
